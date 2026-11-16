@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SYSTEM LOCKED</title>
+<style>
+body{margin:0;background:black;color:white;font-family:sans-serif;text-align:center;overflow:hidden}
+#lock{padding:20px}
+h1{font-size:32px;color:red;text-shadow:0 0 20px red}
+#timer{font-size:40px;color:yellow;font-weight:900}
+.box{background:#111;border:2px solid red;padding:15px;margin:15px;border-radius:15px}
+#prank{display:none;padding:30px}
+button{padding:12px 20px;border:none;border-radius:20px;background:gold;color:black;font-weight:bold;font-size:16px}
+</style>
+</head>
+<body>
+
+<div id="lock">
+  <h1>🔒 PHONE LOCK HO GAYA 🔒</h1>
+  <p>LIGER NE TUMHARA PHONE LOCK KAR DIYA</p>
+  <div id="timer">10:00</div>
+  <div class="box">
+    <p>⚠️ BACK MAT JAO ⚠️</p>
+    <p>Phone 10 minute tak yahin rahega...</p>
+    <p style="color:#00ff00;">Hacking... 99%</p>
+  </div>
+  <p style="font-size:11px;color:#888;">POWERED BY LIGER</p>
+</div>
+
+<div id="prank">
+  <h1 style="color:gold;">😂 PRANK HO GAYA! 😂</h1>
+  <p style="font-size:20px;">Darr gaye na?<br>Tumhara phone bilkul safe hai!</p>
+  <p style="font-size:30px;">🦁 LIGER IS KING 🦁</p>
+  <button onclick="location.reload()">DOBARA PRANK KARO</button>
+  <p style="font-size:12px;margin-top:15px;">Is link ko dost ko bhejo aur uska reaction dekho!</p>
+</div>
+
+<script>
+// Sirf dikhane ke liye 10:00 timer
+let sec = 600;
+setInterval(()=>{
+  sec--;
+  if(sec<0) sec=0;
+  let m = Math.floor(sec/60);
+  let s = sec%60;
+  document.getElementById('timer').innerText = m + ":" + (s<10?"0"+s:s);
+},1000);
+
+// 10 second baad khud hi prank khul jayega, taake banda atka na rahe
+setTimeout(()=>{
+  document.getElementById('lock').style.display='none';
+  document.getElementById('prank').style.display='block';
+},10000);
+</script>
+</body>
+</html>
